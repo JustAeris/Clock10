@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Clock10.Core</RootNamespace>
+  </PropertyGroup>
+
+   <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+   <ItemGroup>
+     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.10" />
+     <PackageReference Include="Microsoft.UI.Xaml" Version="2.4.2" />
+     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+   </ItemGroup>
+</Project>
