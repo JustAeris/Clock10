@@ -37,9 +37,7 @@ namespace Clock10.Views
         DispatcherTimer dispatcherTimer;
         DateTimeOffset startTime;
         DateTimeOffset lastTime;
-        DateTimeOffset stopTime;
         int timesTicked = 1;
-        int timesToTick = 10;
 
         public void DispatcherTimerSetup()
         {

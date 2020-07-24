@@ -7,6 +7,7 @@ using Clock10.Helpers;
 using Clock10.Services;
 
 using Windows.ApplicationModel;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;

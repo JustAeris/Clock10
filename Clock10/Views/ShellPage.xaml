@@ -21,6 +21,7 @@
         IsSettingsVisible="True"
         ItemInvoked="OnItemInvoked"
         OpenPaneLength="200"
+        PaneDisplayMode="Top"
         SelectedItem="{x:Bind Selected, Mode=OneWay}">
         <winui:NavigationView.MenuItems>
             <!--

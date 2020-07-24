@@ -8,11 +8,11 @@
   IgnorableNamespaces="uap mp genTemplate">
 
   <Identity
-    Name="Clock10"
-    Publisher="CN=Astyr"
+    Name="29635Astyr.Clock10"
+    Publisher="CN=61188628-CEC2-4729-A177-0BE913180E82"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="0BA69E5D-AFCF-4C5B-BD1C-2ADEA411EF19" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="e3558787-c7d8-4d91-bf3b-e4b2a37bcb13" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>Clock10</DisplayName>

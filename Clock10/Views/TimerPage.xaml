@@ -4,15 +4,124 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     Style="{StaticResource PageStyle}"
     mc:Ignorable="d">
     <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
-        <Grid
-            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+        <Grid Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
             <!--
-                The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
+                The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content.
                 Place your content here.
             -->
+            <ScrollViewer>
+                <Viewbox MinHeight="200" MinWidth="200" MaxHeight="800" MaxWidth="800">
+                    <StackPanel Orientation="Vertical">
+                    <!--<Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>-->
+
+                    <TextBlock
+                        x:Name="timerTime"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        Margin="5"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="120"
+                        Text="00:00:00" />
+
+                    <StackPanel
+                        Grid.Row="1"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                        <muxc:NumberBox
+                            x:Name="NumberBoxHour"
+                            Margin="10,0"
+                            Header="Hour:"
+                            Maximum="99"
+                            Minimum="0"
+                            SmallChange="1"
+                            SpinButtonPlacementMode="Inline"
+                            Value="0" ValueChanged="NumberBoxHour_ValueChanged"/>
+                        <muxc:NumberBox
+                            x:Name="NumberBoxMinute"
+                            Header="Minute:"
+                            Maximum="59"
+                            Minimum="0"
+                            SmallChange="1"
+                            SpinButtonPlacementMode="Inline"
+                            Value="0" ValueChanged="NumberBoxMinute_ValueChanged"/>
+                        <muxc:NumberBox
+                            x:Name="NumberBoxSecond"
+                            Margin="10,0"
+                            Header="Second:"
+                            Maximum="59"
+                            Minimum="0"
+                            SmallChange="1"
+                            SpinButtonPlacementMode="Inline"
+                            Value="0" ValueChanged="NumberBoxSecond_ValueChanged"/>
+                    </StackPanel>
+
+                    <StackPanel
+                        Grid.Row="2"
+                        Margin="0,20,0,0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                        <ToggleButton
+                            x:Name="timerToggleButton"
+                            Grid.Row="0"
+                            Margin="0,0,5,0"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Center"
+                            Style="{ThemeResource ToggleButtonRevealStyle}" Click="timerToggleButton_Click" Unchecked="timerToggleButton_Unchecked">
+                            <ToggleButton.KeyboardAccelerators>
+                                <KeyboardAccelerator Key="Space" />
+                                <KeyboardAccelerator Key="S" Modifiers="Control" />
+                            </ToggleButton.KeyboardAccelerators>
+                            <ToggleButton.Content>
+                                <Viewbox>
+                                    <StackPanel Margin="15" Orientation="Horizontal">
+                                        <SymbolIcon x:Name="timerStateIcon" Symbol="Play" />
+                                        <TextBlock x:Name="timerStateTextBox" Text=" Start" />
+                                    </StackPanel>
+                                </Viewbox>
+                            </ToggleButton.Content>
+                        </ToggleButton>
+
+                        <Button
+                            x:Name="timerResetButton"
+                            Grid.Column="1"
+                            Margin="5,0,0,0"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Center"
+                            Style="{ThemeResource ButtonRevealStyle}" Click="timerResetButton_Click">
+                            <Button.KeyboardAccelerators>
+                                <KeyboardAccelerator Key="Escape" />
+                                <KeyboardAccelerator Key="R" Modifiers="Control" />
+                            </Button.KeyboardAccelerators>
+                            <Button.Content>
+                                <Viewbox>
+                                    <StackPanel Margin="15" Orientation="Horizontal">
+                                        <SymbolIcon Symbol="Refresh" />
+                                        <TextBlock Text=" Reset" />
+                                    </StackPanel>
+                                </Viewbox>
+                            </Button.Content>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+                </Viewbox>
+                
+            </ScrollViewer>
         </Grid>
+        <MediaPlayerElement Visibility="Collapsed" x:Name="beep" Source="ms-appx:///Assets/newnewbeep.wav"/>
     </Grid>
 </Page>

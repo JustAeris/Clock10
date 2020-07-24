@@ -85,6 +85,7 @@ namespace Clock10.Views
             stopwatchToggleButton.IsChecked = false;
             stopwatchTime.Text = "00:00:00.0000000";
             stopWatch.Reset();
+            aTimer.Dispose();
             
         }
     }

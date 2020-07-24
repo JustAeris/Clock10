@@ -5,46 +5,46 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:helper="using:Clock10.Helpers"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Style="{StaticResource PageStyle}"
     xmlns:xaml="using:Windows.UI.Xaml"
+    Style="{StaticResource PageStyle}"
     mc:Ignorable="d">
     <Page.Resources>
         <helper:EnumToBooleanConverter x:Key="EnumToBooleanConverter" EnumType="ElementTheme" />
     </Page.Resources>
+
     <Grid Margin="{StaticResource MediumLeftRightMargin}">
-        <StackPanel
-            x:Name="ContentArea">
+        <StackPanel x:Name="ContentArea">
             <TextBlock x:Uid="Settings_Personalization" Style="{ThemeResource SubtitleTextBlockStyle}" />
             <StackPanel Margin="{StaticResource SmallTopBottomMargin}">
                 <TextBlock x:Uid="Settings_Theme" />
 
                 <StackPanel Margin="{StaticResource XSmallTopMargin}">
-                    <RadioButton 
+                    <RadioButton
                         x:Uid="Settings_Theme_Light"
-                        Checked="ThemeChanged_CheckedAsync" 
-                        IsChecked="{x:Bind ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Light, Mode=OneWay}"
+                        Checked="ThemeChanged_CheckedAsync"
                         FontSize="15"
-                        GroupName="AppTheme" >
+                        GroupName="AppTheme"
+                        IsChecked="{x:Bind ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Light, Mode=OneWay}">
                         <RadioButton.CommandParameter>
                             <xaml:ElementTheme>Light</xaml:ElementTheme>
-                        </RadioButton.CommandParameter> 
+                        </RadioButton.CommandParameter>
                     </RadioButton>
-                    <RadioButton 
+                    <RadioButton
                         x:Uid="Settings_Theme_Dark"
-                        Checked="ThemeChanged_CheckedAsync" 
-                        IsChecked="{x:Bind ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Dark, Mode=OneWay}"
+                        Checked="ThemeChanged_CheckedAsync"
                         FontSize="15"
-                        GroupName="AppTheme">
+                        GroupName="AppTheme"
+                        IsChecked="{x:Bind ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Dark, Mode=OneWay}">
                         <RadioButton.CommandParameter>
                             <xaml:ElementTheme>Dark</xaml:ElementTheme>
                         </RadioButton.CommandParameter>
                     </RadioButton>
-                    <RadioButton 
+                    <RadioButton
                         x:Uid="Settings_Theme_Default"
                         Checked="ThemeChanged_CheckedAsync"
-                        IsChecked="{x:Bind ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Default, Mode=OneWay}"
                         FontSize="15"
-                        GroupName="AppTheme">
+                        GroupName="AppTheme"
+                        IsChecked="{x:Bind ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Default, Mode=OneWay}">
                         <RadioButton.CommandParameter>
                             <xaml:ElementTheme>Default</xaml:ElementTheme>
                         </RadioButton.CommandParameter>
